@@ -1,0 +1,19 @@
+<p>
+  <strong>Name:</strong>
+  <%= @thing.name %>
+</p>
+
+<p>
+  <strong>Tried:</strong>
+  <%= @thing.tried %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @thing.comment %>
+</p>
+
+<%= link_to 'Edit', edit_thing_path(@thing) %>
+<%= link_to 'Delete', thing_path(@thing), method: :delete, data:{ confirm: 'Are you sure?' } %>
+<%= link_to 'Back to List', things_path %>
+<%= link_to 'Back to Home', controller: 'home'%>
