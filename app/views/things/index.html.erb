@@ -1,0 +1,23 @@
+<h1>Marked Things</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tried</th>
+    <th>Comment</th>
+    <th></th>
+  </tr>
+
+  <% @things.each do |thing| %>
+    <tr>
+      <td><%= thing.name %></td>
+      <td><%= thing.tried %></td>
+      <td><%= thing.comment %></td>
+      <td><%= link_to 'Show', thing_path(thing) %></td>
+      <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+      <td><%= link_to 'Delete', thing_path(thing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Mark New Thing', new_thing_path %>
