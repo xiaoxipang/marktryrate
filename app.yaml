@@ -11,3 +11,6 @@ runtime: ruby
 # application to determine environment values.
 runtime_config:
   dotenv_config: flex-env-config
+
+beta_settings:
+  cloud_sql_instances: "marktryrate:northamerica-northeast1:marktryrate-database"

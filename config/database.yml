@@ -13,6 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -51,6 +52,7 @@ test:
 #
 production:
   <<: *default
-  database: marktryrate_production
-  username: marktryrate
-  password: <%= ENV['MARKTRYRATE_DATABASE_PASSWORD'] %>
+  database: marktryrate
+  username: marktryrate-server
+  password: <%= ENV['MARKTRYRATE_PROD_DB_PASSWORD'] %>
+  socket: "/cloudsql/marktryrate:northamerica-northeast1:marktryrate-database"
